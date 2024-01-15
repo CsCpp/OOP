@@ -3,6 +3,7 @@
 
 namespace myNamespace {			// собственное пространство имен
 
+
 	class MyClass
 	{
 	public:
