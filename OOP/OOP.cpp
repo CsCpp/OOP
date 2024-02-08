@@ -2,13 +2,11 @@
 #include <functional>
 #include<vector>
 
-using namespace std;
+typedef std::vector<int> int_vector;
 
+//typedef
 
-//лямбда-выражение | лямбда-функции | анонимные функции
-
-
-void doWork2(vector<int>& mV, function<void(int)> func)
+void doWork2(int_vector& mV, std::function<void(int)> func)
 {
     for (auto&& e : mV)
     {
@@ -20,17 +18,17 @@ void doWork2(vector<int>& mV, function<void(int)> func)
 int main()
 {
     setlocale(LC_ALL, "ru");
-    vector<int> mV = { 2,52,41,41,36,89,21,15,24,93,27,51,84 };
+    int_vector mV = { 2,52,41,41,36,89,21,15,24,93,27,51,84 };
 
     int p = 0;
-    cout << "Лямбда функция . p=" << p << endl;
+    std::cout << "Лямбда функция . p=" << p << std::endl;
 
     auto ls = [&p]()
         {
             p = 3;
         };
     ls();
-    cout << "Лямбда функция . p=" << p << endl;
+    std::cout << "Лямбда функция . p=" << p << std::endl;
 
 
 
@@ -39,7 +37,7 @@ int main()
         {
             if (a % 2 == 0)
             {
-                 cout << "ананимная функция  \\ четные числа  " << a << endl;
+                std::cout << "ананимная функция  \\ четные числа  " << a << std::endl;
             }
         });
 
