@@ -4,26 +4,31 @@ using namespace std;
 //указатель на функцию
 // тип функции (*имя указателя)(спкцификация параметров):
 
-
-int Foo1 (int a)
+string GetDataFromPetya()
 {
-    cout << "void FOO1()" << endl;
-    return a - 1;
+    return "Petya";
 }
 
-int Foo2(int a)
+string GetDataFromVanya()
 {
-    cout << "void FOO2()" << endl;
-    return a * 2;
+    return "Vanya";
 }
 
+string GetDataFromLena()
+{
+    return "Lena";
+}
+
+void ShowInfo(string(*foo)())
+{
+    cout << foo() << endl;
+}
 
 int main()
 {
-    int (*fooPointer)(int a);
-    fooPointer = Foo1;
-
-    cout << fooPointer(2) << endl;
+    ShowInfo(GetDataFromPetya);
+    ShowInfo(GetDataFromVanya);
+    ShowInfo(GetDataFromLena);
 
     return 0;
 }
