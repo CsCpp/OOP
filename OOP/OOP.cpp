@@ -35,6 +35,13 @@ int main()
 
     }
     cout << endl;
+    cout << "------------------------------------------------------" << endl;
+    for (int i = 0; i < Size; ++i)
+    {
+        cout << (pArr + i) << endl;
+
+    }
+    cout << endl;
 
     return 0;
 }
