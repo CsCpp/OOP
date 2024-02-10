@@ -1,34 +1,16 @@
 ﻿#include <iostream>
 using namespace std;
 
-//указатель на функцию
-// тип функции (*имя указателя)(спкцификация параметров):
+//inline ключевое слово. Встраиваемая функция.
 
-string GetDataFromPetya()
+inline int Sum(int a, int b)
 {
-    return "Petya";
-}
-
-string GetDataFromVanya()
-{
-    return "Vanya";
-}
-
-string GetDataFromLena()
-{
-    return "Lena";
-}
-
-void ShowInfo(string(*foo)())
-{
-    cout << foo() << endl;
+    return a + b;
 }
 
 int main()
 {
-    ShowInfo(GetDataFromPetya);
-    ShowInfo(GetDataFromVanya);
-    ShowInfo(GetDataFromLena);
-
+    cout << Sum(3, 6) << endl;
+   
     return 0;
 }
