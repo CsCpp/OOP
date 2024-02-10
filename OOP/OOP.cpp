@@ -1,22 +1,40 @@
 ﻿#include <iostream>
 using namespace std;
 
-//указатель
+//указатели и массивы. Арифметика указателей
 
 
 
 int main()
 {
     setlocale(LC_ALL, "ru");
+    const int Size = 5;
+    int arr[Size] = { 2,5,34,86,-65 };
+    for (auto&& a : arr)
+    {
+        cout << a << " ";
 
-    int a = 9;
-    cout << &a <<"\tадрес переменной" << endl;
-    int* pa = &a;
-    cout << pa <<"\tадрес на который ссылается указатель" << endl;
-    cout << &pa <<"\tадрес самого указателя"<< endl;
-    cout << *pa <<"\t\t\tзначение которое храниться по  указателю"<< endl;
+    }
+    cout << endl;
+    int* pArr = arr;
+    cout << "------------------------------------------------------" << endl;
+    cout << arr << "\t  адресс массива arr" << endl;
+    cout << pArr << "\t  адресс  на который указывает указатель pArr" << endl;
+    cout << &pArr << "\t  адресс самого указателя pArr" << endl;
+    cout << "------------------------------------------------------" << endl;
+    for (int i = 0; i < Size; ++i)
+    {
+        cout << pArr[i] << " ";
 
+    }
+    cout << endl;
+    cout << "------------------------------------------------------" << endl;
+    for (int i = 0; i < Size; ++i)
+    {
+        cout << *(pArr+i) << " ";
 
+    }
+    cout << endl;
 
     return 0;
 }
