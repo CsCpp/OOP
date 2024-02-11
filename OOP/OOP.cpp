@@ -23,6 +23,8 @@ int main()
 
     int& aRef2 = *pa;
     int* ppa = &aRef2;
+    *ppa = 82;
+    cout << a << endl;
 
     return 0;
 }
