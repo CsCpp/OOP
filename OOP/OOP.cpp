@@ -1,47 +1,28 @@
 ﻿#include <iostream>
 using namespace std;
 
-//указатели и массивы. Арифметика указателей
+//ссылки
 
 
 
 int main()
 {
     setlocale(LC_ALL, "ru");
-    const int Size = 5;
-    int arr[Size] = { 2,5,34,86,-65 };
-    for (auto&& a : arr)
-    {
-        cout << a << " ";
+    int a = 5;
+    int* pa = &a;
+    int& aRef = a;
 
-    }
-    cout << endl;
-    int* pArr = arr;
-    cout << "------------------------------------------------------" << endl;
-    cout << arr << "\t  адресс массива arr" << endl;
-    cout << pArr << "\t  адресс  на который указывает указатель pArr" << endl;
-    cout << &pArr << "\t  адресс самого указателя pArr" << endl;
-    cout << "------------------------------------------------------" << endl;
-    for (int i = 0; i < Size; ++i)
-    {
-        cout << pArr[i] << " ";
+    cout << aRef <<"  значение по ссылке" << endl;
+    cout << pa <<"  адрес переменной а" << endl;
+    cout << &aRef << "  адрес куда указывает ссылка" << endl;
+    aRef++;
+    cout << aRef << endl;
+    aRef = 55;
+    cout << aRef << endl;
+    cout << a << endl;
 
-    }
-    cout << endl;
-    cout << "------------------------------------------------------" << endl;
-    for (int i = 0; i < Size; ++i)
-    {
-        cout << *(pArr+i) << " ";
-
-    }
-    cout << endl;
-    cout << "------------------------------------------------------" << endl;
-    for (int i = 0; i < Size; ++i)
-    {
-        cout << (pArr + i) << endl;
-
-    }
-    cout << endl;
+    int& aRef2 = *pa;
+    int* ppa = &aRef2;
 
     return 0;
 }
