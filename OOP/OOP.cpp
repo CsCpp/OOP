@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 using namespace std;
 
-//передача аргумента по ссылке
+//Операторы new && delete
 
 
 
@@ -22,14 +22,11 @@ void Foo3(int* pa)
 
 int main()
 {
-    int a = -1;
-    setlocale(LC_ALL, "ru");
-    Foo1(a);
-    cout << a << endl << endl;
-    Foo2(a);
-    cout << a << endl << endl;
-    Foo3(&a);
-    cout << a << endl << endl;
-
+    int* pa = new int;
+    cout << pa << endl;
+    cout << *pa << endl;
+    *pa = 33;
+    cout << *pa << endl;
+    delete pa;
     return 0;
 }
