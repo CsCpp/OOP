@@ -1,24 +1,9 @@
 ﻿#include <iostream>
 using namespace std;
 
-//Операторы new && delete
+//NULL && nullptr
 
 
-
-void Foo1(int a)
-{
-    a = 1;;
-}
-
-void Foo2(int& a)
-{
-   a=2;
-}
-
-void Foo3(int* pa)
-{
-    *pa=3;
-}
 
 int main()
 {
@@ -28,5 +13,16 @@ int main()
     *pa = 33;
     cout << *pa << endl;
     delete pa;
+    cout << pa << endl;
+    pa = NULL; // pa = 0;
+    cout << pa << endl;
+    
+    
+    int* pb = new int;
+    *pb = 233;
+    delete pb;
+    pb = nullptr;
+
+
     return 0;
 }
