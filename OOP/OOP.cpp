@@ -1,28 +1,22 @@
 ﻿#include <iostream>
 using namespace std;
 
-//NULL && nullptr
+//динамический массив
 
 
 
 int main()
 {
-    int* pa = new int;
-    cout << pa << endl;
-    cout << *pa << endl;
-    *pa = 33;
-    cout << *pa << endl;
-    delete pa;
-    cout << pa << endl;
-    pa = NULL; // pa = 0;
-    cout << pa << endl;
-    
-    
-    int* pb = new int;
-    *pb = 233;
-    delete pb;
-    pb = nullptr;
-
-
+    int size = 0;
+    cout << "Size enter" << endl;
+    cin >> size;
+    int* arr  = new int[size];
+    for (int i=0; i<size; ++i) 
+    {
+        arr[i] = rand()%1000;
+        cout << i<<"\t"<< * (arr + i) << endl;
+    }
+    delete[] arr;
+    arr = nullptr;
     return 0;
 }
