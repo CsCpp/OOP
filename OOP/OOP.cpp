@@ -1,7 +1,10 @@
 ﻿#include <iostream>
 using namespace std;
 
-//копирование динамического массива
+//  изменение размера динамического массива
+//  добавление элемента в конец массив
+//  удаление последнего элемента из массива
+
 
 void FillArray( int* const arr, const int size)
 {
@@ -20,33 +23,43 @@ void ShowArray(const int* const arr, const int size)
     cout << endl;
 }
 
+void push_back(int*& arr, int& size,const int value)
+{
+    int* newArr = new int[size + 1];
+    for (int i = 0; i < size; ++i) newArr[i] = arr[i];
+    newArr[size] = value;
+    size++;
+    delete [] arr;
+    arr = newArr;
+}
+
+void pop_back(int*& arr, int& size)
+{   
+    size--;
+    int* newArr = new int[size];
+    for (int i = 0; i < size; ++i) newArr[i] = arr[i];
+     
+    delete[] arr;
+    arr = newArr;
+
+}
+
+
+
 int main()
 {
     int size = 7;
     int* arr = new int[size];
-    int* newArr = new int[size];
     FillArray(arr, size);
-    FillArray(newArr, size);
-
+    ShowArray(arr, size);
+//-----------------------------------------------------------------------------------
+    push_back(arr, size, 777);
+    ShowArray(arr, size);
+//-----------------------------------------------------------------------------------
+    pop_back(arr, size);
+    ShowArray(arr, size);
+//-----------------------------------------------------------------------------------
     delete [] arr;
     arr = nullptr;
- 
-    arr = new int[size];
-    for (int i = 0; i < size; ++i) // arr=newArr
-    {
-        arr[i] = newArr[i];
-    }
-
-
-    ShowArray(arr, size);
-    ShowArray(newArr, size);
-
-
-
-
-
-
-    delete [] arr;
-    delete [] newArr;
-    return 0;
+    return 777;
 }
