@@ -1,17 +1,19 @@
 ﻿#include <iostream>
 using namespace std;
 
-//  приведение типов
+//  ASCII
 
 
 int main()
 {
+	setlocale(LC_ALL, "ru");
 //-----------------------------------------------------------------------------------
-	double a = 3.33;
-	cout << a << endl;
-	cout << (int)a << endl;
-	cout << (bool)a << endl;
-	cout << (char)a << endl;
+	for (int i = 0; i < 256; ++i)
+	{
+		cout << "   \tcode = " << i << "\t " << " char = " << (char)i << endl;
+
+	}
+
 
 
 //-----------------------------------------------------------------------------------
