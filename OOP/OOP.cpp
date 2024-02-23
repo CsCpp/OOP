@@ -1,20 +1,32 @@
 ﻿#include <iostream>
 using namespace std;
 
-//  ASCII
+//  строки и указатели в С++
+void Foo(const char* str)
+{
+	cout << "Foo print STR = " << str << endl;
+	cout << "размер строки, strlen(str) = " << strlen(str) << endl;
 
+}
 
 int main()
 {
 	setlocale(LC_ALL, "ru");
 //-----------------------------------------------------------------------------------
-	for (int i = 0; i < 256; ++i)
-	{
-		cout << "   \tcode = " << i << "\t " << " char = " << (char)i << endl;
+	char strOld [] = "Hello!";
+	const char* str = strOld;
 
+	cout << str << endl;
+	cout << strOld << endl;
+
+	 
+	const char* strArr[] = {"Hi","tyt","TEST"};
+	for (auto&& a : strArr)
+	{
+		cout << a << endl;
 	}
 
-
+	Foo(str);
 
 //-----------------------------------------------------------------------------------
 return 777;
