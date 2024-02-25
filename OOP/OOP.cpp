@@ -2,19 +2,31 @@
 #include <string>
 using namespace std;
 
-#define Foo(x,y) ((x)*(y))
+#define DEBUG // раскоментировать для теста
 
-//  #define
-// препроцессор
-//  макрос функция
+
+//  условная компиляция
+// 
 
 
 int main()
 {
 	setlocale(LC_ALL, "ru");
 //-----------------------------------------------------------------------------------
-	cout << Foo(3,5) << endl;
+#ifdef DEBUG
+		cout << "Начало цикла //DEBUG" << endl;
+#else 
+		cout << " нету //DEBUG" << endl;		
+#endif // DEBUG
 
+	
+	for (int i = 0; i < 5; ++i)
+	{
+		cout << i << endl;
+	}
+#ifdef DEBUG
+	cout << "Конец цикла //DEBUG" << endl;
+#endif // DEBUG
 //-----------------------------------------------------------------------------------
 return 777;
 }
