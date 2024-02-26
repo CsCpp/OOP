@@ -2,10 +2,8 @@
 #include <string>
 using namespace std;
 
-#define DEBUG // раскоментировать для теста
 
-
-//  условная компиляция
+//  тернарный оператор
 // 
 
 
@@ -13,20 +11,24 @@ int main()
 {
 	setlocale(LC_ALL, "ru");
 //-----------------------------------------------------------------------------------
-#ifdef DEBUG
-		cout << "Начало цикла //DEBUG" << endl;
-#else 
-		cout << " нету //DEBUG" << endl;		
-#endif // DEBUG
 
+	int a;
 	
-	for (int i = 0; i < 5; ++i)
+	while (1)
 	{
-		cout << i << endl;
+		cin >> a;
+		a < 10 ? cout << "a<10" << endl : a>10? cout << "a>10" << endl: cout << "a=10" << endl;
+/*
+		if (a < 10)
+		{
+			cout << "a<10" << endl;
+		}
+		else
+		{
+			cout << "a>10" << endl;
+		}
+*/
 	}
-#ifdef DEBUG
-	cout << "Конец цикла //DEBUG" << endl;
-#endif // DEBUG
 //-----------------------------------------------------------------------------------
 return 777;
 }
