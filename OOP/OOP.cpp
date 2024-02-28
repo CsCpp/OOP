@@ -3,11 +3,11 @@
 using namespace std;
 
 
-//  int arge, char*argv[]
+//  int main || void main
 // 
 
 
-void main(int argc,  char*  argv[])
+int main(int argc,  char*  argv[])
 {
 	setlocale(LC_ALL, "ru");
 //-----------------------------------------------------------------------------------
@@ -18,5 +18,5 @@ void main(int argc,  char*  argv[])
 	}
 	system ("pause");
 //-----------------------------------------------------------------------------------
-
+	return 0;
 }
